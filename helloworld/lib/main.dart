@@ -10,15 +10,8 @@ class MyApp extends StatelessWidget {
     //final wordPair =WordPair.random();
 
     return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          child: RandomWords(),
-        ),
-      ),
+      title: 'Startup Name Generator',
+      home: RandomWords(),
     );
   }
 }
@@ -64,9 +57,10 @@ class RandomWordsState extends State<RandomWords> {
           }
 
           return _buildRow(_suggestions[index]);
-        },
+        }
     );
   }
+
 
   Widget _buildRow(WordPair pair) {
     return ListTile(
@@ -88,4 +82,3 @@ class RandomWords extends StatefulWidget {
   @override
   RandomWordsState createState() => new RandomWordsState();
 }
-
