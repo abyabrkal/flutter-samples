@@ -39,11 +39,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           /*3*/
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          Text('41'),
+          FavoriteWidget(),
         ],
       ),
     );
@@ -129,9 +125,9 @@ The framework calls createState() when it wants to build the
 widget. In this example, createState() returns an instance 
 of _FavoriteWidgetState, 
 */
-class FavoriteWidget extends StateWidget {
+class FavoriteWidget extends StatefulWidget {
   @override
-  _FavoriteWidget createState() => FavoriteWidgetState();
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
 }
 
 
@@ -163,7 +159,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
   }
 
 
-  void toggleFavorite() {
+  void _toggleFavorite() {
     setState(() {
       if(_isFavorited) {
         _favoriteCount --;
@@ -175,5 +171,5 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
     });
   }
 
-  
+
 }
